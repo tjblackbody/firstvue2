@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <header>头部</header>
+
+  首页
   </div>
 </template>
 
@@ -15,7 +16,5 @@ export default {
 }
 </script>
 <style>
-header{
-  background-color: pink;
-}
+
 </style>
