@@ -1,5 +1,7 @@
 # jifenshop
-
+```
+此项目是一个积分商城项目
+```
 ## Project setup
 ```
 npm install
