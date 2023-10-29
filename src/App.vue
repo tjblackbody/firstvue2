@@ -13,13 +13,21 @@
 import TopBar from '@/components/TopBar.vue'
 import FooTar from '@/components/FooTar.vue'
 import HeaDer from '@/components/HeaDer.vue'
+import request from '@/request/request'
 
 export default {
   components: {
     TopBar, FooTar, HeaDer
+  },
+  created () {
+    request.get('/cms/products/recommend')
+      .then(res => {
+        console.log(res)
+      })
   }
 
 }
+
 </script>
 
 <style lang="less">
