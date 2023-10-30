@@ -13,29 +13,22 @@
 import TopBar from '@/components/TopBar.vue'
 import FooTar from '@/components/FooTar.vue'
 import HeaDer from '@/components/HeaDer.vue'
-import request from '@/request/request'
 
 export default {
   components: {
-    TopBar, FooTar, HeaDer
-  },
-  created () {
-    request.get('/cms/products/recommend')
-      .then(res => {
-        console.log(res)
-      })
+    TopBar, HeaDer, FooTar
   }
 
 }
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
 }
 

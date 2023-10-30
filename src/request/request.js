@@ -1,7 +1,7 @@
 import axios from 'axios'
 // 创建axios实例
 const instance = axios.create({
-  baseURL: 'http://tech.wolfcode.cn:8001/index/index/cms/products/recommend',
+  baseURL: 'http://tech.wolfcode.cn:8001/index/index',
   timeout: 5000
 })
 
@@ -16,7 +16,7 @@ instance.interceptors.request.use(config => {
 
 // 封装响应拦截器
 // 是接口数据返回给我们的时候提前拦截
-instance.interceptors.request.use(res => {
+instance.interceptors.response.use(res => {
   console.log('响应拦截器中的res', res.data)
   return res.data // retrun到组件内部请求的res
 }, err => {
