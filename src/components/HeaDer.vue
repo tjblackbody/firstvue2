@@ -7,16 +7,16 @@
     <div class="nav">
 
     <ul>
-      <li>首页</li>
-      <li>全部商品</li>
-      <li>个人中心</li>
-      <li>我的订单</li>
-      <li>专属福利</li>
+      <li @click="$router.push('/home').catch(err=>{})" :class="$route.path==='/home' ? 'active':''">首页</li>
+      <li @click="$router.push('/Goods').catch(err=>{})" :class="$route.path==='/Goods' ? 'active':''">全部商品</li>
+      <li @click="$router.push('/GeRenzhongxin').catch(err=>{})" :class="$route.path==='/GeRenzhongxin' ? 'active':''">个人中心</li>
+      <li @click="$router.push('/WoDedingdan').catch(err=>{})" :class="$route.path==='/WoDedingdan' ? 'active':''">我的订单</li>
+      <li @click="$router.push('/ZhuanShufuli').catch(err=>{})" :class="$route.path==='/ZhuanShufuli' ? 'active':''">专属福利</li>
     </ul>
     </div>
     <div class="search">
-      <input type="text">
-      <span><img width="15px"  height="15px
+      <input type="text" @keyup.13="toserach" placeholder="请输入搜索商品" v-model="uusersearch">
+      <span @click="toserach"><img width="15px"  height="15px
         " src="../assets//img//search.png" alt=""></span>
     </div>
   </div>
@@ -30,6 +30,20 @@
 export default {
   components: {
 
+  },
+  methods: {
+    toserach () {
+      // 跳转goods
+      this.$router.push(`/goods?keyword=${this.uusersearch}`)
+
+      // 清空输入内容
+      this.uusersearch = ''
+    },
+    data () {
+      return {
+        uusersearch: ''
+      }
+    }
   }
 
 }
@@ -106,5 +120,8 @@ align-items: center;
 //     background-color: black;
 //   }
 // }
+.active{
+  color: #0A328E;
+}
 
 </style>
